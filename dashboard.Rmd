@@ -39,10 +39,12 @@ nyc_restaurant %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Box Plot of the Inspection Score of NYC Restaurants
 
 ```{r}
-
+nyc_restaurant %>% 
+  mutate(cuisine_description = fct_reorder(cuisine_description, score)) %>% 
+  plot_ly(y = ~score, color = ~cuisine_description, type = "box", colors = "viridis")
 ```
 
 ### Chart C
