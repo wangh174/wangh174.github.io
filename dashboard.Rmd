@@ -13,6 +13,14 @@ library(plotly)
 library(p8105.datasets)
 ```
 
+```{r}
+#filter dataset with variables boro, cuisine_description, inspection_date, score, grade only
+nyc_restaurant = rest_inspec %>% 
+  select(boro, cuisine_description, inspection_date, score, grade) %>% 
+  filter(.data = ., boro == "MANHATTAN") %>% 
+  na.omit()
+```
+
 Column {data-width=650}
 -----------------------------------------------------------------------
 

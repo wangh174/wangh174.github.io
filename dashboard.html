@@ -283,6 +283,11 @@ $(document).ready(function () {
 </div>
 
 
+<pre class="r"><code>#filter dataset with variables boro, cuisine_description, inspection_date, score, grade only
+nyc_restaurant = rest_inspec %&gt;% 
+  select(boro, cuisine_description, inspection_date, score, grade) %&gt;% 
+  filter(.data = ., boro == &quot;MANHATTAN&quot;) %&gt;% 
+  na.omit()</code></pre>
 <div id="column" class="section level2" data-width="650">
 <h2>Column</h2>
 <div id="chart-a" class="section level3">
