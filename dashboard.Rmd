@@ -47,9 +47,14 @@ nyc_restaurant %>%
   plot_ly(y = ~score, color = ~cuisine_description, type = "box", colors = "viridis")
 ```
 
-### Chart C
+### Scatter Plot of the Inspection Score of NYC Restaurants Across Years 
 
 ```{r}
-
+nyc_restaurant %>% 
+  mutate(inspection_date = as.Date(inspection_date)) %>%
+  plot_ly(
+    x = ~inspection_date, y = ~score, type = "scatter", mode = "markers",
+    color = ~cuisine_description, alpha = 0.5
+  )
 ```
 
