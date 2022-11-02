@@ -24,10 +24,16 @@ nyc_restaurant = rest_inspec %>%
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Bar Plot with the Grade of NYC Restaurants
 
 ```{r}
-
+nyc_restaurant %>% 
+  group_by(cuisine_description, grade) %>% 
+  summarize(count = n()) %>% 
+  plot_ly(
+    y = ~count, x = ~cuisine_description, color = ~grade, 
+    type = "bar", colors = "viridis"
+  )
 ```
 
 Column {data-width=350}
