@@ -8,6 +8,9 @@ output:
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
 ```
 
 Column {data-width=650}
